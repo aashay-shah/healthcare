@@ -45,10 +45,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
+    <style>
+        .mySlides {display:none;}
+    </style>
+
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Healthcare</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,6 +68,29 @@
           </ul>
         </div>
     </nav>
+    
+      <img class="mySlides" src="1.jpg" style="width:100% height:50px">
+      <img class="mySlides" src="2.jpg" style="width:100% height: 50px">
+      <img class="mySlides" src="3.jpg" style="width:100% height: 50px">
+    </div>
+
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 3000); // Change image every 2 seconds
+        }
+    </script>
+
     <div class = "container">
         <div class="row">
       <div class ="col-md-6 offset-md-3">
@@ -76,6 +103,7 @@
                     <fieldset>
                       <div class="form-group">
                         <div class="panel-heading main-color-bg" style="font-size: 24px; color: blue">
+                        <br>
                         Enter Details:
                         </div>
                         <label for="email_id">Email Address: </label>
